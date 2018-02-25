@@ -1,0 +1,47 @@
+﻿@page
+@model LoginWithTH.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <form asp-page="Restricted" method="post" class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ViewModel.Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ViewModel.Email" class="form-control" />
+                <span asp-validation-for="ViewModel.Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ViewModel.UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ViewModel.UserName" class="form-control" />
+                <span asp-validation-for="ViewModel.UserName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ViewModel.Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ViewModel.Password" class="form-control" />
+                <span asp-validation-for="ViewModel.Password" class="text-danger"></span>
+            </div>
+        </div>
+        <a asp-page="Restricted">log in here</a>
+        <input type="submit" value="Log In" />
+    </form>
+</body>
+</html>

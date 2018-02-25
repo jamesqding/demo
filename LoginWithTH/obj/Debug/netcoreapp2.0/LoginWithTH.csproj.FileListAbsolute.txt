@@ -1,0 +1,11 @@
+C:\WorkingGit\demo\LoginWithTH\bin\Debug\netcoreapp2.0\LoginWithTH.deps.json
+C:\WorkingGit\demo\LoginWithTH\bin\Debug\netcoreapp2.0\LoginWithTH.runtimeconfig.json
+C:\WorkingGit\demo\LoginWithTH\bin\Debug\netcoreapp2.0\LoginWithTH.runtimeconfig.dev.json
+C:\WorkingGit\demo\LoginWithTH\bin\Debug\netcoreapp2.0\LoginWithTH.dll
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.csprojResolveAssemblyReference.cache
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.csproj.CoreCompileInputs.cache
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.AssemblyInfoInputs.cache
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.AssemblyInfo.cs
+C:\WorkingGit\demo\LoginWithTH\bin\Debug\netcoreapp2.0\LoginWithTH.pdb
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.dll
+C:\WorkingGit\demo\LoginWithTH\obj\Debug\netcoreapp2.0\LoginWithTH.pdb
