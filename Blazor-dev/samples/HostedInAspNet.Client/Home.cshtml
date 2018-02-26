@@ -1,17 +1,37 @@
 ﻿
 <h1>Hello, world!</h1>
 
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 
+
+<button @onclick(TryLogin)>Log in to get cookie</button>
 ON ---Test Form validation in cshtml --- using data-* for validation
 <form method="post" action="/index.html">
     <input value="" data-val="true" data-val-required="pls enter data" />
     <input type="submit" value="Log in" />
+
 </form>
 
+<script src="blazor.js"></script>
+<script>
+
+    function writeCookie() {
+        $.cookie('blzor_auth2', "fakecokie_laahaoiaweaga");
+        return true;
+    }
+    // writeCookie();
+    blazor.registerFunction("wc", writeCookie);
+</script>
+@Info;
 @functions {
+
+public string Info;
+public void TryLogin()
+{
+    // call javascript to write cookie.
+    Info = "you are logged in";
+    Microsoft.AspNetCore.Blazor.Browser.Interop.
+    RegisteredFunction.Invoke<bool>("wc");
+}
 public VM vm = new VM() { UserName = "jding" };
 
 public class VM
