@@ -1,0 +1,26 @@
+﻿<Project>  
+  <Target Name="BlazorCompileRazorComponents" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <BlazorComponentsNamespace>$(RootNamespace)</BlazorComponentsNamespace>
+      <IsDesignTimeBuild Condition="'$(DesignTimeBuild)' == 'true' OR '$(BuildingProject)' != 'true'">true</IsDesignTimeBuild>
+      <GeneratedFilePath>$(IntermediateOutputPath)BlazorRazorComponents.g.cs</GeneratedFilePath>
+      <SourceDir>$(ProjectDir.TrimEnd('\'))</SourceDir>
+    </PropertyGroup>
+    <Exec Command="$(BlazorBuildExe) buildrazor --source &quot;$(SourceDir)&quot; --namespace $(BlazorComponentsNamespace) --output &quot;$(GeneratedFilePath)&quot;" />
+    <ItemGroup>
+      <Compile Include="$(GeneratedFilePath)" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <!-- Instruct VS to re-run the target when input files change. Other IDEs may not honor this
+         and therefore developers may need to rebuild after changing cshtml files. -->
+    <Compile Update="**\*.cshtml">
+      <Generator>MSBuild:BlazorCompileRazorComponents</Generator>
+    </Compile>
+
+    <!-- Instruct VS to include cshtml files in its "fast up-to-date check". If we didn't, then
+         it will skip the build entirely if you only changed cshtml files. -->
+    <UpToDateCheckInput Include="$(ProjectDir)**\*.cshtml" />
+  </ItemGroup>
+</Project>

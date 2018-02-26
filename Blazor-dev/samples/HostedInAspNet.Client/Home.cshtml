@@ -1,0 +1,23 @@
+﻿
+<h1>Hello, world!</h1>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+ON ---Test Form validation in cshtml --- using data-* for validation
+<form method="post" action="/index.html">
+    <input value="" data-val="true" data-val-required="pls enter data" />
+    <input type="submit" value="Log in" />
+</form>
+
+@functions {
+public VM vm = new VM() { UserName = "jding" };
+
+public class VM
+{
+    [System.ComponentModel.DataAnnotations.Required]
+    public string UserName { get; set; }
+}
+}
+

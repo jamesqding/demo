@@ -1,0 +1,20 @@
+﻿
+<h1>Hello, world!</h1>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+<a asp-pages="test">Click </a>
+
+<form method="post" action="~/index.html" >
+    <input value="@UserName " />
+    <input type="submit"  value="Log in" />
+</form>
+
+@functions {
+
+    [System.ComponentModel.DataAnnotations.Required]
+    public string UserName { get; set; }
+}
+
+
